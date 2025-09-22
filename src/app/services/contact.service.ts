@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface ContactData {
-  prenom: string;
-  nom: string;
-  age?: number;
-  email?: string;
-  commentaire: string;
-}
+import {ContactData} from '../models/contact.model';
 
 @Injectable({
   providedIn: 'root' // service singleton accessible partout
