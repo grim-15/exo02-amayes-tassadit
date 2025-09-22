@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactService, ContactData } from '../services/contact.service';
+import { Router } from '@angular/router';
+import { ContactService } from '../services/contact.service';
+import { ContactData } from '../../models/contact-data';
 
 @Component({
   selector: 'app-gestion',
@@ -10,9 +12,16 @@ import { ContactService, ContactData } from '../services/contact.service';
   styleUrls: ['./gestion.scss']
 })
 export class Gestion {
-  lastContact: ContactData | null = null;
+  public lastContact: ContactData | null = null;
 
-  constructor(private contactService: ContactService) {
+  constructor(
+    private contactService: ContactService,
+    private router: Router 
+  ) {
     this.lastContact = this.contactService.getLast();
+
+    if (!this.lastContact) {
+      this.router.navigate(['/not-found']);
+    }
   }
 }

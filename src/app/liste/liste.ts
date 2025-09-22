@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { Film } from '../../models/film'; 
 
 @Component({
   selector: 'app-liste',
@@ -10,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./liste.scss']
 })
 export class Liste {
-  films = [
+  public films: Film[] = [ 
     { title: 'Bird Box Barcelona', poster: 'assets/1.webp' },
     { title: 'Badland Hunters', poster: 'assets/2.webp' },
     { title: 'The Matrix', poster: 'assets/3.jpg' },
@@ -18,9 +19,9 @@ export class Liste {
     { title: 'The Killer', poster: 'assets/5.1.webp' }
   ];
 
-  selectedFilm: any = null;
+  public selectedFilm: Film | null = null;
 
-  selectFilm(film: any) {
+  public selectFilm(film: Film) { 
     this.selectedFilm = film;
   }
 }

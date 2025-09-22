@@ -22,10 +22,11 @@ import { ContactService } from '../services/contact.service';
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss']
 })
-export class Contact {
-  contactForm: FormGroup;
 
-  constructor(private router: Router, private contactService: ContactService) { // <-- injecte le service
+export class Contact {
+  public contactForm: FormGroup;
+
+  public constructor(private router: Router, private contactService: ContactService) { // <-- injecte le service
     this.contactForm = new FormGroup({
       prenom: new FormControl('', Validators.required),
       nom: new FormControl('', Validators.required),
@@ -47,13 +48,13 @@ export class Contact {
     });
   }
 
-  envoyer() {
+  public envoyer() {
     if (this.contactForm.valid) {
       this.contactService.save(this.contactForm.value);
 
       alert("Le formulaire est valide");
 
-      this.router.navigate(['/gestion']);
+      this.router.navigate(['/accueil']);
     }
   }
 }
