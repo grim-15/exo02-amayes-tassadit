@@ -1,0 +1,21 @@
+.liste-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.films button {
+  margin: 5px;
+}
+
+.film-detail {
+  margin-top: 20px;
+}
+
+.film-detail img {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

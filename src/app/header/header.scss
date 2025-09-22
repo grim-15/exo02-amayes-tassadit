@@ -1,0 +1,35 @@
+.app-header {
+  height: 80px;
+  background: linear-gradient(to right, #ea3a8c, #2575fc);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Espaces flexibles pour centrer le conteneur de boutons */
+.nav-spacer {
+  flex: 1;
+}
+
+/* Conteneur des boutons centré */
+.nav-buttons {
+  display: flex;
+  gap: 30px; /* espace équivalent entre les boutons */
+}
+
+/* Style des boutons */
+button[mat-button] {
+  background-color: #ffffff;
+  color: #cf77ca;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.3s;
+  padding: 8px 20px;
+}
+
+/* Effet au survol */
+button[mat-button]:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+}

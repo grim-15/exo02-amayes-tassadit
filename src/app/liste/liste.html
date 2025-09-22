@@ -1,0 +1,14 @@
+<div class="liste-container">
+  <h2>Mes films préférés</h2>
+  
+  <div class="films">
+    <button *ngFor="let film of films" mat-raised-button color="primary" (click)="selectFilm(film)">
+      {{ film.title }}
+    </button>
+  </div>
+
+  <div *ngIf="selectedFilm" class="film-detail">
+    <h3>{{ selectedFilm.title }}</h3>
+    <img [src]="selectedFilm.poster" alt="{{ selectedFilm.title }}">
+  </div>
+</div>
